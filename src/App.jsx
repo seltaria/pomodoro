@@ -1,5 +1,5 @@
 import { Provider } from 'react-redux';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import { loadState, saveState } from './localstorage';
 
@@ -26,18 +26,15 @@ store.subscribe(() => {
 
 function App() {
   return (
-    <>
-      <Provider store={store}>
-        <BrowserRouter>
-          <Routes>
-            <Route path='/' element={<Layout />}>
-              <Route index element={<MainBlock />} />
-              <Route path='stats' element={<Activity />} />
-            </Route>
-          </Routes>
-        </BrowserRouter>
-      </Provider>
-    </>
+    <Provider store={store}>
+      <Routes>
+        <Route path='/' element={<Layout />}>
+          <Route index element={<MainBlock />} />
+          <Route path='stats' element={<Activity />} />
+          <Route path='*' element={<div style={{ textAlign: "center", marginTop: "100px" }}>Страница с таким адресом не найдена</div>} />
+        </Route>
+      </Routes>
+    </Provider>
   )
 }
 
