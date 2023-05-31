@@ -20,7 +20,7 @@ const store = createSlice({
     deleteTask: (state, action) => { state.tomatoes = state.tomatoes.filter(tomato => tomato.id !== action.payload) },
     plusFiveDuration: (state, action) => { state.tomatoes = state.tomatoes.map(tomato => tomato.id === action.payload ? { ...tomato, duration: { ...tomato.duration, active: tomato.duration.active + 5 } } : tomato) },
     minusOneDuration: (state, action) => { state.tomatoes = state.tomatoes.map(tomato => tomato.id === action.payload ? { ...tomato, duration: { ...tomato.duration, active: tomato.duration.active - 1 } } : tomato) },
-    moreTomatoes: (state, action) => { state.tomatoes = state.tomatoes.map(tomato => tomato.id === action.payload ? { ...tomato, count: tomato.count + 1, duration: { ...tomato.duration, others: tomato.duration.others + 25 } } : tomato) },
+    moreTomatoes: (state, action) => { state.tomatoes = state.tomatoes.map(tomato => tomato.id === action.payload.id ? { ...tomato, count: tomato.count + 1, duration: { ...tomato.duration, others: tomato.duration.others + action.payload.duration } } : tomato) },
     lessTomatoes: (state, action) => {
       if (state.tomatoes.filter(tomato => tomato.id === action.payload)[0].count !== 1) {
         state.tomatoes = state.tomatoes.map(

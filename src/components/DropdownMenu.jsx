@@ -10,7 +10,9 @@ import { deleteTask, lessTomatoes, moreTomatoes } from '../store/store.js';
 export function DropdownMenu(props) {
 
   const tomatoData = useSelector((state) => state.main.tomatoes).filter(tomato => tomato.id === props.id)[0];
+  const tomatoDuration = useSelector(state => state.main.options.duration);
   const dispatch = useDispatch();
+
   const node = document.querySelector("#dropdown-root");
   if (!node) return null;
 
@@ -22,7 +24,7 @@ export function DropdownMenu(props) {
   }
 
   function increaseTomatoes() {
-    dispatch(moreTomatoes(props.id));
+    dispatch(moreTomatoes({ id: props.id, duration: tomatoDuration }));
   }
 
   function decreaseTomatoes() {
