@@ -7,7 +7,7 @@ export function Header() {
   return (
     <header className="header">
       <div className="container header__container">
-        <Link to="/" className="header__logo"><TomatoIcon />pomodoro_box</Link>
+        <Link to="/" className="header__logo"><TomatoIcon /><span>pomodoro_box</span></Link>
         <ThemeButton />
         <Link to="/stats" className="header__stat"><StatisticsIcon />Статистика</Link>
       </div>

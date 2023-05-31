@@ -624,3 +624,115 @@ body.dark .daytime__text span {
 body.dark .tomato-count__count {
   color: #ffac9d;
 }
+
+/* ===== */
+/* MEDIA */
+/* ===== */
+
+@media (max-width: 1400px) {
+
+  .activity {
+    padding-top: 50px;
+  }
+  .stat__pers {
+    font-size: 40px;
+  }
+
+  .graph {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+}
+
+@media (max-width: 1050px) {
+
+  .main-block {
+    grid-template-columns: 1fr;
+    padding-top: 50px;
+  }
+  .tomato {
+    grid-row: 1/2;
+  }
+  
+  .stat svg {
+    display: none;
+  }
+  .stat__pers {
+    font-size: 50px;
+  }
+  .activity {
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+  .activity__block {
+    gap: 20px;
+  }
+
+  .graph {
+    grid-column: 1 / 13;
+  }
+  .daytime {
+    grid-column: 1 / 5;
+  }
+  .tomato-count {
+    grid-column: 5 / 9;
+  }
+
+}
+
+@media (max-width: 650px) {
+
+  .tomato__timer {
+    font-size: 100px;
+  }
+  .tomato__buttons button {
+    width: 100px;
+    height: 40px;
+  }
+  .tomato__plus {
+    width: 40px;
+    height: 40px;
+  }
+  .header__logo span {
+    display: none;
+  }
+
+  .daytime {
+    grid-column: 1 / 13;
+  }
+  .tomato-count {
+    grid-column: 1 / 13;
+  }
+  .stat.target,
+  .stat.stops,
+  .stat.pause {
+    grid-column: 1 / 13;
+  }
+  .tomato-count {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  .tomato-count__footer {
+    display: none;
+  }
+  .graph {
+    grid-row: 1 / 2;
+  }
+
+  .activity__header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+}
+
+@media (max-width: 500px) {
+
+  .main-block {
+    padding: 30px 10px;
+  }
+
+}
